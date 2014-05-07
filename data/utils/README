@@ -1,0 +1,9 @@
+This util processes and normalizes the data,
+
+Place JUST the csv lines from the ephemeris you wish to process into the file "dirty.csv"
+The result will be placed into "clean.txt" which then can be added to "ephemeris.json"
+
+The source data contains Julian Time stamps, regular dates, xyz vectors in scientific notation
+
+The output (inside clean.txt), will be rows of data objects with the date as a key and xyz distances 
+in Astronomical Units
