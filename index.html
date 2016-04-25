@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <title>Basic Solar System Model</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF8">
-        <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="./js/three.min.js"></script>
-        <script type="text/javascript" src="./js/underscore-min.js"></script>
-        <script type="text/javascript" src="./js/backbone-min.js"></script>
-        <script type="text/javascript" src="./js/system.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <style type="text/css">
+
+            body{
+            
+                background:#221d23;
+                margin:0;
+                font-family:Arial, Arial, Helvetica, sans-serif;
+                background:@plain-white;
+                -webkit-font-smoothing:antialiased;
+                text-shadow:1px 1px 1px rgba(0,0,0,0.004);
+                overflow:hidden;
+            }
+        </style>
     </head>
 
-    <body style="background:#000; overflow:hidden; margin:0">
+    <body>
+
+        <script type="text/javascript" src="./js/three.r75.min.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>  
         <script type="text/javascript">
-            System.initialize();
+
+            App.initialize();
         </script>
     </body>
 </html>
