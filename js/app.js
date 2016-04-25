@@ -11,6 +11,8 @@
         initialize : function(){
  
             this.solSys = new SolSys();
+
+            this.loadKeplerianElements();
         },
 
         /**
@@ -20,7 +22,11 @@
          */
         loadKeplerianElements : function(){
 
-            //console.log("sup");
+            /**
+             * "planetKeplerElements" is a global variable set in the file of 
+             * the same name.
+             */
+            this.solSys.drawVectorOrbits(planetKeplerElements);
         },
     };
 })(this);
