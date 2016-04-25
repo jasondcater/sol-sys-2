@@ -24,7 +24,25 @@
     <body>
 
         <script type="text/javascript" src="./js/three.r75.min.js"></script>
+        <script type="text/javascript" src="./js/orb-obj.js"></script>
+        <script type="text/javascript" src="./js/sol-sys.js"></script>
         <script type="text/javascript" src="./js/app.js"></script>  
+
+        <!-- 
+            
+            "App" is a generic starter script that fetcthes data for "SolSys".
+            "SolSys" is the 3D model that will contain orbits, but by itself
+            draws no orbits. "SolSys" is the stage all other elements will act.
+            "SolSys" will use instances of "OrbObj" to render orbits.
+
+            You can use two types of data.
+                1. Cartesian [X, Y, Z] data is rendered as a point cloud.
+                2. Keplerian Elements are rendered as a vector object.
+
+            The README.md included in this projects has some important details
+            to tell you about: proper interpetation of orbital elements and the
+            conversion between reference frames.
+         -->
         <script type="text/javascript">
 
             App.initialize();

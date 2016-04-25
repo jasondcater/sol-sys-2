@@ -142,12 +142,6 @@
             objOrb.drawPointOrbit(orbit)
         };
 
-        this.drawSpecialOrbit = function(orbit){
-
-            var objOrb = new OrbObj(this.scene, this.scalar);
-            objOrb.drawSpecialOrbit(orbit)
-        };
-
         /**
          * Sets the eventing for the mouse movements 
          * so we can rotate the 3D graphics

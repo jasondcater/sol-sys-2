@@ -3,18 +3,14 @@
     "use strict";
 
     /**
-     * main application controller,
-     * builds the widgets,
-     * handles the inter-widget eventing,
-     * sets and gets global variables,
-     * catches and routes global ajax responses
+     * A simple script to set up and provide data toSolSys
      */
 
     global.App = {
 
         initialize : function(){
-
-            //console.log("sup")/   
+ 
+            this.solSys = new SolSys();
         }
     };
 })(this);

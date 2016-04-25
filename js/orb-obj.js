@@ -61,53 +61,6 @@
             this.anchor.add(center);
         };
 
-        //draw orbit using osculating orbital elements
-        this.drawSpecialOrbit = function(orbitalElements){
-
-            var scale = this.scalar;
-            var eccentricity = orbitalElements[1];
-            var semiMajAx = orbitalElements[0];
-            var semiMinAx = semiMajAx * Math.sqrt(1-Math.pow(eccentricity,2));
-
-            var argOfPerihelion = orbitalElements[4];
-            if(argOfPerihelion < 0) argOfPerihelion + 360;
-
-            var ascendingNode = orbitalElements[5];
-            var inclination = orbitalElements[2];
-
-            //calculate the perihelion; q = a (1 - e)
-            var perihelion = semiMajAx * (1 - eccentricity);
-
-            var ellipseCurve = new THREE.EllipseCurve(0, 0, semiMajAx*scale, semiMinAx*scale, 0, 2*Math.PI, false);
-            var ellipsePath = new THREE.CurvePath();
-            ellipsePath.add(ellipseCurve);
-            var ellipseGeometry = ellipsePath.createPointsGeometry(100);
-
-            var offset = (semiMajAx - perihelion) * scale;
-            var ellipseMat = new THREE.LineBasicMaterial({color:0x3fa134, opacity:.8, linewidth:2, transparent:true});
-            var ellipse = new THREE.Line(ellipseGeometry, ellipseMat);
-            ellipse.position.x = -(offset);
-
-            var argPeriObj = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({color: 0xffff00}));
-            argPeriObj.add(ellipse);
-            argPeriObj.rotation.z = this.degToRad(argOfPerihelion);
-
-            var inclineObj = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({color: 0xffff00}));
-            inclineObj.add(argPeriObj);
-            inclineObj.rotation.x = this.degToRad(inclination);
-
-            var ascNodeObj = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({color: 0xffff00}));
-            ascNodeObj.add(inclineObj);
-            ascNodeObj.rotation.z = this.degToRad(ascendingNode);
-
-            var center = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({color: 0xffff00, opacity:0}));
-            center.add(ascNodeObj);
-            center.rotation.x = -(Math.PI/2);
-            center.position.y = 10
-
-            this.anchor.add(center);
-        };
-
         //draw orbit using cartesian state vector
         this.drawPointOrbit = function(orbitalElements){
 
