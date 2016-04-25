@@ -13,7 +13,7 @@
         /**
          *  Will enable a unit circle and axis finders to be drawn for help.
          */
-        this.debug = true;
+        this.debug = false;
         this.scalar = 80;
 
         //Web GL, Three JS components
@@ -138,10 +138,13 @@
             }
         };
 
-        this.drawPointOrbits = function(orbit){
+        this.drawPointOrbits = function(orbits){
 
-            var objOrb = new OrbObj(this.scene, this.scalar);
-            objOrb.drawPointOrbit(orbit)
+            for(var orbit in orbits){
+
+                var objOrb = new OrbObj(this.scene, this.scalar);
+                objOrb.drawPointOrbit(orbits[orbit]);
+            }
         };
 
         /**

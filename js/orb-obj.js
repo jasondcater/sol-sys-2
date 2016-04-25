@@ -81,7 +81,7 @@
             var particleMat = new THREE.PointsMaterial({
 
                 color: 0xcc9966,
-                size: 100.0
+                size: 1.0
             });
 
             for(var a = 0; a < particleCount; ++a){

@@ -1,35 +1,33 @@
-import re
-oldstring = '0040'
-newstring = re.sub("^0+","",oldstring)
+# Open the text file from NASA HORIZONS Web Interface
+with open("./pluto_test_file.txt", "r") as read_file:
+  read_lines = read_file.readlines()
 
-import csv
-csvfile = open("dirty.csv", "rb")
-reader = csv.reader(csvfile)
+write_file = open("./clean.csv", "w")
 
-cleanfile = open("clean.txt","w")
+output = False
+for read_line in read_lines:
+  
+  read_line = read_line.replace("\n", "")
 
-for row in reader:
+  if read_line == "$$EOE":
+    output = False
 
-    date = row[1].replace(" A.D. ", "");
+  if output:
+    elements = read_line.split(",") 
+
+    date = elements[1]
+
+    date = date.replace(" A.D. ", "");
     date = date.replace(" 00:00:00.0000", "");
-    date = date.replace("Jan","1");
-    date = date.replace("Feb","2");
-    date = date.replace("Mar","3");
-    date = date.replace("Apr","4");
-    date = date.replace("May","5");
-    date = date.replace("Jun","6");
-    date = date.replace("Jul","7");
-    date = date.replace("Aug","8");
-    date = date.replace("Sep","9");
-    date = date.replace("Oct","10");
-    date = date.replace("Nov","11");
-    date = date.replace("Dec","12");
 
-    x = "{:.25f}".format(float(row[2]))
-    y = "{:.25f}".format(float(row[3]))
-    z = "{:.25f}".format(float(row[4]))
+    x_pos = "{:.25f}".format(float(elements[2]))
+    y_pos = "{:.25f}".format(float(elements[3]))
+    z_pos = "{:.25f}".format(float(elements[4]))
 
-    cleanfile.write("        \""+date+"\":["+x+","+y+","+z+"],\n")
+    write_file.write("\""+ date +"\", "+ x_pos +", "+ y_pos + ", "+ z_pos +"\n") 
+  
+  if read_line == "$$SOE":
+    output = True   
 
-csvfile.close()
-cleanfile.close()
+read_file.close()  
+write_file.close()

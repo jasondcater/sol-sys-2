@@ -3,7 +3,7 @@
     "use strict";
 
     /**
-     * A simple script to set up and provide data toSolSys
+     * A simple script to set up and provide data to SolSys
      */
 
     global.App = {
@@ -13,6 +13,7 @@
             this.solSys = new SolSys();
 
             this.loadKeplerianElements();
+            this.loadCartesianElements();
         },
 
         /**
@@ -28,5 +29,24 @@
              */
             this.solSys.drawVectorOrbits(planetKeplerElements);
         },
+
+        /**
+         * I've aquired a bunch of Ephemeris data from NASA to help
+         * show you how this model works, however the dates for the
+         * data may not be accurate. DO NOT rely on the input data
+         * here for your models. Generate your own data:
+         *
+         *      http://ssd.jpl.nasa.gov/horizons.cgi
+         *
+         * See the README.md for more information
+         */
+        loadCartesianElements : function(){
+
+            /**
+             * "planetCartesianElements" is a global variable set in the file of 
+             * the same name.
+             */
+            this.solSys.drawPointOrbits(planetCartesianElements)
+        }
     };
 })(this);
