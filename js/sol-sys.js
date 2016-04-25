@@ -10,7 +10,10 @@
 
     global.SolSys = function(){
 
-        this.debug = false;
+        /**
+         *  Will enable a unit circle and axis finders to be drawn for help.
+         */
+        this.debug = true;
         this.scalar = 80;
 
         //Web GL, Three JS components
@@ -39,7 +42,7 @@
 
             this.viewPort.id = "renderer-viewport";
 
-            //mouse navigation events
+            //set up mouse navigation events
             this.setupNavigationEventing();
 
             //set some up some reference markers
@@ -56,7 +59,6 @@
 
             //add the view port to the DOM and start the render
             this.scene.add(new THREE.AmbientLight(0xffffff));
-
             this.viewPort.appendChild(this.renderer.domElement);
             document.body.appendChild(this.viewPort);
 
