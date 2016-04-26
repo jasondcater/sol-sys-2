@@ -38,30 +38,30 @@ There is a "debug" flag in the `SolSys` file. By setting it to `true` you will a
 Each orbit in solar system can be described as an ellipse in 3D. This ellipse has a few elements that describe its shape and orientation around a point (in our case it's mostly the Sun, but it doesn't have to be). The elements are described below. When first trying to understand these elements it can be confusing because there are interchangeable names and symbols. I will try and describe when a name or symbol indicates the same value.
 
 ##### Semi Major Axis
-symbol, "a" or greek letter Little Alpha 
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_a.jpg)
+symbol, "a" or greek letter Little Alpha 
   * The semi-major axis is one half of the major axis, and thus runs from the center, through a focus, and to the perimeter. Essentially, it is the radius of an orbit at the orbit's two most distant points. For the special case of a circle, the semi-major axis is the radius.
 
 ##### Eccentricity
-symbol, "e" or little e
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_e.jpg)
+symbol, "e" or little e
   * The orbital eccentricity of an astronomical object is a parameter that determines the amount by which its orbit around another body deviates from a perfect circle. i.e. how squished the ellipse is.
 
 ##### Inclination
-symbol, "i" or little i
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_i.jpg)
+symbol, "i" or little i
  * Orbital inclination is the angle between a reference plane and the orbital plane or axis of direction of an object in orbit around another object. Or how much tilt the orbit has relative to the Solar System reference plane (more about the Solar System Plane in J200 Ecliptic Reference frame below). But the reference plane we are talking about is the flat-ish part of the solar system.
 
 ##### Longitude of Ascending Node
-symbol, "Ω" or greek letter Big Omega
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/big_omega.jpg)
+symbol, "Ω" or greek letter Big Omega
  * If you have an orbit that is inclined (which all natural orbits are to some degree, even if it's very small) then there is a point in which the orbit passes upward (acending) through the reference plane (mentioned earlier and described in more detail later) and downward on its return. If you have an imaginary line drawn on the reference plane you can meausure the angle from where the orbit crosses up (acends) through the reference plane.
 
  * Also see "Ascending Node" in the extra definitions below.
 
 ##### Argument of Perihelion (can be known as periapsis)
-symbol, "w" or greek letter Little Omega
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_omega.jpg)
+symbol, "w" or greek letter Little Omega
   * Once you know where in the reference plane the orbit is "acending" you have a good reference point. From there you can find out at which angle the the distance from the center body (in this case the Sun) is the shortest.
 
   * Also see "Longitude of Perihelion" in the extra definitions below.
