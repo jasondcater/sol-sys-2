@@ -22,7 +22,7 @@ symbol, "i" or little i
 symbol, "Ω" or greek letter Big Omega
  * If you have an orbit that is inclined (which all natural orbits are to some degree, even if it's very small) then there is a point in which the orbit passes upward (acending) through the reference plane (mentioned earlier and described in more detail later) and downward on its return. If you have an imaginary line drawn on the reference plane you can meausure the angle from where the orbit crosses up (acends) through the reference plane.
 
-![alt tag] (./blob/master/img/orbital_elements.jpg)
+![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/orbital_elements.jpg)
 
 #### Argument of Perihelion
 symbol, "w" or greek letter Little Omega
@@ -48,7 +48,7 @@ The Z-Axis is perpendicular to both the X-Axis and Y-Axis.
 
 From the wiki - "Heliocentric ecliptic coordinates. The origin is the center of the Sun. The fundamental plane is the plane of the ecliptic. The primary direction (the x axis) is the vernal equinox. A right-handed convention specifies a y axis 90° to the east in the fundamental plane; the z axis points toward the north ecliptic pole. The reference frame is relatively stationary, aligned with the vernal equinox."
 
-![alt tag] (./blob/master/img/heliocentric_ecliptic.jpg)
+![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/heliocentric_ecliptic.jpg)
 
 ## Other important orbital elements
 
