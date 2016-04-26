@@ -65,6 +65,7 @@ Each orbit in solar system can be described as an ellipse in 3D. This ellipse ha
   * Also see "Longitude of Perihelion" in the extra definitions below.
 
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/orbital_elements.jpg)
+In the image above the `P2` plane is the Ecliptic Plane, the `little gamma` charachter points out the X-Axis, `S` is the Sun, and the line segment between `S` and `P` is the Perihelion.
 
 ## Definitions of Ecliptic Coordinate System (Heliocentric Ecliptic Coordinates, Fundemental Plane)
 https://en.wikipedia.org/wiki/Ecliptic_coordinate_system
@@ -93,13 +94,6 @@ From the wiki - "Heliocentric ecliptic coordinates. The origin is the center of 
 ##### Barycenter
   * In space nothing is fixed. In a situation when two or more items/objects/bodies are orbiting they orbit each other around a point which is somewhere between the centers of each item. It is not true that the planets orbit around the Sun. The sun and planets orbit around a graviational center. Since the Sun is so much more massive than the planets this graviational center is also located inside the Sun (but not at the Sun's center). A gravitational center is known as A barycenter and is not at the center of an object, but is used as a reference point between two objects.
 
-##### Periapsis
-  * The point in the path of an orbiting body at which it is nearest to the body that it orbits. i.e. The closest approch that one orbiting body makes toward another. So this means that Perihelion (closest approch to the Sun) is just a special case of Periapsis.
-
-##### Longitude of Perihelion
-  * The sum of two angles: "Longitude of Ascending Node" + "Argument of Perihelion" = "Longitude of Perihelion"
-  * You may encounter the "Longitude of Perihelion" out in the wild, and you may need "Argument of Perihelion" instead. IF you have "Longitude of Ascending Node" and "Longitude of Perihelion", just subtract one from the other.
-
 ##### Ascending Node
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/ascending_node.jpg)
   * The point in space where the orbit passes through the Ecliptic plane on ascention.
@@ -107,3 +101,21 @@ From the wiki - "Heliocentric ecliptic coordinates. The origin is the center of 
 ##### Semi Minor Axis
   * From the wiki: In geometry, the semi-minor axis (also semiminor axis) is a line segment associated with most conic sections (that is, with ellipses and hyperbolas) that is at right angles with the semi-major axis and has one end at the center of the conic section.
   * i.e. Half of the distance in the short area of an ellipse.
+
+##### Longitude of Perihelion
+  * The sum of two angles: "Longitude of Ascending Node" + "Argument of Perihelion" = "Longitude of Perihelion"
+  * You may encounter the "Longitude of Perihelion" out in the wild, and you may need "Argument of Perihelion" instead. IF you have "Longitude of Ascending Node" and "Longitude of Perihelion", just subtract one from the other.
+
+##### Periapsis
+  * The point in the path of an orbiting body at which it is nearest to the body that it orbits. i.e. The closest approch that one orbiting body makes toward another. So this means that Perihelion (closest approch to the Sun) is just a special case of Periapsis.
+
+##### Perigee
+  * You may see this one around, but it applies to the Moon/Earth relationship. The closest approach the Moon makes toward the Earth
+
+##### Apsis, Aphelion, Apogee
+  * These three items are just the exact opposite of Periapsis, Perhelion, and Perigee, 
+  * The farthest distance two orbiting bodies make.
+  * Aphelion is related to a body orbiting the Sun, and Apogee is related to the Moon orbiting the Earth.
+  * Same idea, but just refers to different relationships.
+
+
