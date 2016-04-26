@@ -4,9 +4,9 @@ This is a 3D model of the Solar System that renders in the browser. This makes i
 
 ## Adjustments made for computer graphics
 
-One of the issues that can arise in modeling the Solar system is the conversion from the Ecliptic Coordinate System (ECS) to the computer's graphical coordinate system (CGCC). (Read below for more on the ECS)
+One of the issues that can arise in modeling the Solar system is the conversion from the Ecliptic Coordinate System (ECS) to the computer's graphical coordinate system (CGCS). (Read below for more on the ECS)
 
-In the CGCC the Y and Z axes are in the wrong places and directions as compared to the ECS. You will need to convert between the coordinate systems for you to get an accurate result. However, you don't need to do any linear algebra to accomplish the proper rotations. There is an easy to implement solution. By rotating _around_ the X-Axis the CGCC will match the ECS. Here is how you do that.
+In the CGCS the Y and Z axes are in the wrong places and directions as compared to the ECS. You will need to convert between the coordinate systems for you to get an accurate result. However, you don't need to do any linear algebra to accomplish the proper rotations. There is an easy to implement solution. By rotating _around_ the X-Axis the CGCS will match the ECS. Here is how you do that.
 
 Before you add an item to the `scene` create a parent graphical object and rotate it by -90˚. Then attach your desired elements to this parent element. Now you should be able to treat ECS coordinates as they should be with no further transtlations needed. 
 
@@ -102,7 +102,7 @@ From the wiki - "Heliocentric ecliptic coordinates. The origin is the center of 
 
 ##### Ascending Node
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/ascending_node.jpg)
-  * The point in space where the three planes ("funamental/ecliptic", "inclination", and "longitude of ascending node) intersect in space.
+  * The point in space where the orbit passes through the Ecliptic plane on ascention.
 
 ##### Semi Minor Axis
   * From the wiki: In geometry, the semi-minor axis (also semiminor axis) is a line segment associated with most conic sections (that is, with ellipses and hyperbolas) that is at right angles with the semi-major axis and has one end at the center of the conic section.
