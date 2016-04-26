@@ -9,11 +9,11 @@
      * http://www.bogan.ca/orbits/kepler/orbteqtn.html
      */
 
-    global.OrbObj = function(anchor, scalar){
+    global.OrbObj = function(anchor, scalar, color){
 
         this.scalar = scalar;
         this.anchor = anchor;
-        this.color  = 0x6666cc;
+        this.color  = color;
 
         //draw orbit using osculating orbital elements
         this.drawLineOrbit = function(orbitalElements){
@@ -80,7 +80,7 @@
             var particles = new THREE.Geometry();
             var particleMat = new THREE.PointsMaterial({
 
-                color: 0xcc9966,
+                color: this.color,
                 size: 1.0
             });
 

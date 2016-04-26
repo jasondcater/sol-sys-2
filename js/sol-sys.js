@@ -14,6 +14,12 @@
          *  Will enable a unit circle and axis finders to be drawn for help.
          */
         this.debug = false;
+
+        /**
+         * The "scalar" will set the objective size of the system and orbits.
+         * In this way you can think solely in terms of the unit of measurement (AU or KM),
+         * and not worry about how that translates to the screen.
+         */
         this.scalar = 80;
 
         //Web GL, Three JS components
@@ -133,7 +139,7 @@
 
             for(var orbit in orbits){
 
-                var objOrb = new OrbObj(this.scene, this.scalar);
+                var objOrb = new OrbObj(this.scene, this.scalar, 0x6666cc);
                 objOrb.drawLineOrbit(orbits[orbit]);
             }
         };
@@ -142,7 +148,7 @@
 
             for(var orbit in orbits){
 
-                var objOrb = new OrbObj(this.scene, this.scalar);
+                var objOrb = new OrbObj(this.scene, this.scalar, 0xcc9966);
                 objOrb.drawPointOrbit(orbits[orbit]);
             }
         };

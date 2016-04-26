@@ -12,6 +12,10 @@
  
             this.solSys = new SolSys();
 
+            /**
+             * To see one orbit or the other you can just comment out
+             * the orbit you don't want to see.
+             */
             this.loadKeplerianElements();
             this.loadCartesianElements();
         },
@@ -31,9 +35,9 @@
         },
 
         /**
-         * I've aquired a bunch of Ephemeris data from NASA to help
+         * I've acquired a bunch of Ephemeris data from NASA to help
          * show you how this model works, however the dates for the
-         * data may not be accurate. DO NOT rely on the input data
+         * data may not be current. DO NOT rely on the input data
          * here for your models. Generate your own data:
          *
          *      http://ssd.jpl.nasa.gov/horizons.cgi
