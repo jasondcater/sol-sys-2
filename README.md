@@ -2,31 +2,43 @@
 
 This is a 3D model of the Solar System that renders in the browser which makes it easy to implement in other projects, such as games or front ends for scientific models. This system can render either Keparian Orbital Elements or Cartesian State Vectors (<X,Y,Z> points). I've included default data sets of the planets in both formats so you can get a sence of what to expect in usage.
 
+## Adjustments made for computer graphics
+
+One of the issues that can arise in modeling the Solar system is the conversion from the Ecliptic Coordinate System (ECS) to the computer's graphical coordinate system (CGCC). (Read below for more on the ECS)
+
+In the CGCC the Y and Z axes are in the wrong places and directions as compared to the ECS. You will need to convert between the coordinate systems for you to get a good result and accurate. However, you don't need to do any linear algebra. There is an easy to implement solution. By rotating _around_ the X-Axis teh CGCC will match the ECS. Here is how you do that.
+
+Before you add an item to the `scene` create a parent graphical object and rotate it by -90˚. Then attach your desired elements to this parent element. Now you should be able to treat ECS coordinates as they should be with no further transtlations needed. 
+
+There is a "debug" flag in the `SolSys` file. By setting it to `true` you will activate an axis helper and unit circle which will help with orientation in the ECS reference frame. Red = X-Axis, Green = Y-Axis, Blue = Z-Axis
+
+![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/graphics_rotation.jpg)
+
 ## Definitions of Keparian Orbital Elements
 
 Each orbit in solar system can be described as an ellipse in 3D. This ellipse has a few elements that describe its shape and orientation around a point (in our case it's mostly the Sun, but it doesn't have to be). The elements are described below. When first trying to understand these elements it can be confusing because there are interchangeable names and symbols. I will try and describe when a name or symbol indicates the same value.
 
-#### Semi Major Axis
+##### Semi Major Axis
 symbol, "a" or greek letter Little Alpha
   * The semi-major axis is one half of the major axis, and thus runs from the center, through a focus, and to the perimeter. Essentially, it is the radius of an orbit at the orbit's two most distant points. For the special case of a circle, the semi-major axis is the radius.
 
-#### Eccentricity
+##### Eccentricity
 symbol, "e" or little e
   * The orbital eccentricity of an astronomical object is a parameter that determines the amount by which its orbit around another body deviates from a perfect circle. i.e. how squished the ellipse is.
 
-#### Inclination
+##### Inclination
 symbol, "i" or little i
  * Orbital inclination is the angle between a reference plane and the orbital plane or axis of direction of an object in orbit around another object. Or how much tilt the orbit has relative to the Solar System reference plane (more about the Solar System Plane in J200 Ecliptic Reference frame below). But the reference plane we are talking about is the flat-ish part of the solar system.
 
-#### Longitude of Ascending Node
+##### Longitude of Ascending Node
 symbol, "Ω" or greek letter Big Omega
  * If you have an orbit that is inclined (which all natural orbits are to some degree, even if it's very small) then there is a point in which the orbit passes upward (acending) through the reference plane (mentioned earlier and described in more detail later) and downward on its return. If you have an imaginary line drawn on the reference plane you can meausure the angle from where the orbit crosses up (acends) through the reference plane.
 
-![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/orbital_elements.jpg)
-
-#### Argument of Perihelion
+##### Argument of Perihelion (can be known as periapsis)
 symbol, "w" or greek letter Little Omega
   * Once you know where in the reference plane the orbit is "acending" you have a good reference point. From there you can find out at which angle the the distance from the center body (in this case the Sun) is the shortest.
+
+![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/orbital_elements.jpg)
 
 ## Definitions of Ecliptic Coordinate System (Heliocentric Ecliptic Coordinates, Fundemental Plane)
 https://en.wikipedia.org/wiki/Ecliptic_coordinate_system
@@ -52,4 +64,8 @@ From the wiki - "Heliocentric ecliptic coordinates. The origin is the center of 
 
 ## Other important orbital elements
 
-Barycenter - In space nothing is fixed. In a situation when two or more items/objects/bodies are orbiting they orbit each other around a point which is somewhere between the centers of each item. It is not true that the planets orbit around the Sun. The sun and planets orbit around a graviational center. Since the Sun is so much more massive than the planets this graviational center is also located inside the Sun (but not at the Sun's center). A gravitational center is known as A barycenter and is not at the center of an object, but is used as a reference point between two objects.
+##### Barycenter
+  * In space nothing is fixed. In a situation when two or more items/objects/bodies are orbiting they orbit each other around a point which is somewhere between the centers of each item. It is not true that the planets orbit around the Sun. The sun and planets orbit around a graviational center. Since the Sun is so much more massive than the planets this graviational center is also located inside the Sun (but not at the Sun's center). A gravitational center is known as A barycenter and is not at the center of an object, but is used as a reference point between two objects.
+
+##### Periapsis
+  * The point in the path of an orbiting body at which it is nearest to the body that it orbits. i.e. The closest approch that one orbiting body makes toward another. So this means that Perihelion (closest approch to the Sun) is just a special case of Periapsis.

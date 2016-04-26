@@ -16,8 +16,8 @@
              * To see one orbit or the other you can just comment out
              * the orbit you don't want to see.
              */
-            this.loadKeplerianElements();
-            this.loadCartesianElements();
+            //this.loadKeplerianElements();
+            //this.loadCartesianElements();
         },
 
         /**
