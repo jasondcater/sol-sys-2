@@ -39,29 +39,29 @@ Each orbit in solar system can be described as an ellipse in 3D. This ellipse ha
 
 ##### Semi Major Axis
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_a.jpg)
-symbol, "a" or greek letter Little Alpha 
+  * symbol, "a" or greek letter Little Alpha 
   * The semi-major axis is one half of the major axis, and thus runs from the center, through a focus, and to the perimeter. Essentially, it is the radius of an orbit at the orbit's two most distant points. For the special case of a circle, the semi-major axis is the radius.
 
 ##### Eccentricity
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_e.jpg)
-symbol, "e" or little e
+  * symbol, "e" or little e
   * The orbital eccentricity of an astronomical object is a parameter that determines the amount by which its orbit around another body deviates from a perfect circle. i.e. how squished the ellipse is.
 
 ##### Inclination
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_i.jpg)
-symbol, "i" or little i
+ * symbol, "i" or little i
  * Orbital inclination is the angle between a reference plane and the orbital plane or axis of direction of an object in orbit around another object. Or how much tilt the orbit has relative to the Solar System reference plane (more about the Solar System Plane in J200 Ecliptic Reference frame below). But the reference plane we are talking about is the flat-ish part of the solar system.
 
 ##### Longitude of Ascending Node
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/big_omega.jpg)
-symbol, "Ω" or greek letter Big Omega
+ * symbol, "Ω" or greek letter Big Omega
  * If you have an orbit that is inclined (which all natural orbits are to some degree, even if it's very small) then there is a point in which the orbit passes upward (acending) through the reference plane (mentioned earlier and described in more detail later) and downward on its return. If you have an imaginary line drawn on the reference plane you can meausure the angle from where the orbit crosses up (acends) through the reference plane.
 
  * Also see "Ascending Node" in the extra definitions below.
 
 ##### Argument of Perihelion (can be known as periapsis)
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_omega.jpg)
-symbol, "w" or greek letter Little Omega
+  * symbol, "w" or greek letter Little Omega
   * Once you know where in the reference plane the orbit is "acending" you have a good reference point. From there you can find out at which angle the the distance from the center body (in this case the Sun) is the shortest.
 
   * Also see "Longitude of Perihelion" in the extra definitions below.
@@ -98,14 +98,14 @@ From the wiki - "Heliocentric ecliptic coordinates. The origin is the center of 
 ##### Periapsis
   * The point in the path of an orbiting body at which it is nearest to the body that it orbits. i.e. The closest approch that one orbiting body makes toward another. So this means that Perihelion (closest approch to the Sun) is just a special case of Periapsis.
 
-#### Longitude of Perihelion
+##### Longitude of Perihelion
   * The sum of two angles: "Longitude of Ascending Node" + "Argument of Perihelion" = "Longitude of Perihelion"
   * You may encounter the "Longitude of Perihelion" out in the wild, and you may need "Argument of Perihelion" instead. IF you have "Longitude of Ascending Node" and "Longitude of Perihelion", just subtract one from the other.
 
-#### Ascending Node
+##### Ascending Node
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/ascending_node.jpg)
   * The point in space where the three planes ("funamental/ecliptic", "inclination", and "longitude of ascending node) intersect in space.
 
-#### Semi Minor Axis
+##### Semi Minor Axis
   * From the wiki: In geometry, the semi-minor axis (also semiminor axis) is a line segment associated with most conic sections (that is, with ellipses and hyperbolas) that is at right angles with the semi-major axis and has one end at the center of the conic section.
   * i.e. Half of the distance in the short area of an ellipse.
