@@ -56,14 +56,12 @@ Each orbit in solar system can be described as an ellipse in 3D. This ellipse ha
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/big_omega.jpg)
  * symbol, "Ω" or greek letter Big Omega
  * If you have an orbit that is inclined (which all natural orbits are to some degree, even if it's very small) then there is a point in which the orbit passes upward (acending) through the reference plane (mentioned earlier and described in more detail later) and downward on its return. If you have an imaginary line drawn on the reference plane you can meausure the angle from where the orbit crosses up (acends) through the reference plane.
-
  * Also see "Ascending Node" in the extra definitions below.
 
 ##### Argument of Perihelion (can be known as periapsis)
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/letters/little_omega.jpg)
   * symbol, "w" or greek letter Little Omega
   * Once you know where in the reference plane the orbit is "acending" you have a good reference point. From there you can find out at which angle the the distance from the center body (in this case the Sun) is the shortest.
-
   * Also see "Longitude of Perihelion" in the extra definitions below.
 
 ![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/orbital_elements.jpg)
