@@ -15,7 +15,9 @@
         this.anchor = anchor;
         this.color  = color;
 
-        //draw orbit using osculating orbital elements
+        /**
+         * Draw orbit using Keplarian orbital elements.
+         */
         this.drawLineOrbit = function(orbitalElements){
 
             var scale = this.scalar;
@@ -26,7 +28,7 @@
             var argOfPerihelion = orbitalElements[3]; // Argument of Perihelion
             var ascendingNode   = orbitalElements[4]; // Longitude of Acending Node
 
-            //calculate some other variables we will need
+            //calculate some other orbital variables we will need
             if(argOfPerihelion < 0) argOfPerihelion + 360;
             var perihelion = semiMajAx * (1 - eccentricity);
             var semiMinAx = semiMajAx * Math.sqrt(1-Math.pow(eccentricity,2));
@@ -72,7 +74,16 @@
             this.anchor.add(center);
         };
 
-        //draw orbit using cartesian state vector
+        /**
+         * Draw orbit using cartesian state vector.
+         * Takes an array of the shape:
+         * 
+         *  [
+         *      [date, x position, y position, z_position],
+         *      [date, x position, y position, z_position],
+         *      ...
+         *  ]
+         */
         this.drawPointOrbit = function(orbitalElements){
 
             // create the particle variables
