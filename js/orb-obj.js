@@ -107,7 +107,7 @@
             var particleSystem = new THREE.Points(particles, particleMat);
 
             var center = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({color: 0xffff00}));
-            center.rotation.x = -this.degToRad(90)
+            center.rotation.x = -this.degToRad(90);
             center.add(particleSystem);
             this.anchor.add(center);
         };

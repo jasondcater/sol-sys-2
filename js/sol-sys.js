@@ -13,7 +13,7 @@
         /**
          *  Will enable a unit circle and axis finders to be drawn for help.
          */
-        this.debug = true;
+        this.debug = false;
 
         /**
          * The "scalar" will set the objective size of the system and orbits.
@@ -56,8 +56,7 @@
 
             //set up the render/camera/view
             this.renderer.setSize(window.innerWidth, window.innerHeight);
-            //this.renderer.setClearColor(0x221d23, 1);
-            this.renderer.setClearColor(0x666666, 1);
+            this.renderer.setClearColor(0x221d23, 1);
 
             //set initial camera position
             this.camera.position.x = Math.cos(this.cameraYaw * (Math.PI/180)) * this.cameraDistance;
@@ -89,14 +88,14 @@
             xAxis.vertices.push(new THREE.Vector3(4000, 0, 0));
             xAxis.vertices.push(new THREE.Vector3(-4000, 0, 0));
             var xAx = new THREE.Line(xAxis, xAxisMat);
-            //this.scene.add(xAx);
+            this.scene.add(xAx);
 
             var yAxisMat = new THREE.LineBasicMaterial({color:0x7c3a41, transparent:true, opacity:0.5});
             var yAxis = new THREE.Geometry();
             yAxis.vertices.push(new THREE.Vector3(0, 0, 4000));
             yAxis.vertices.push(new THREE.Vector3(0, 0, -4000));
             var yAxis = new THREE.Line(yAxis, yAxisMat);
-            //this.scene.add(yAxis);
+            this.scene.add(yAxis);
 
             //used for calibration
             if(this.debug){
@@ -126,7 +125,7 @@
                     var unitCircle = new THREE.Mesh(unitCircleGeom, unitCircleMat);
                     unitCircle.rotation.x = -(Math.PI/2);
 
-                    //this.scene.add(unitCircle);
+                    this.scene.add(unitCircle);
                 }
 
                 var unitCircleLoader = new THREE.TextureLoader();
