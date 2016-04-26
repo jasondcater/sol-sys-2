@@ -1,29 +1,37 @@
 # 3D/Web GL Solar System Model
 
-This is a 3D model of the Solar System that renders in the browser which makes it easy to implement in other projects, such as games or front ends for scientific models. This system can render either Keparian Orbital Elements or Cartesian State Vectors (<X,Y,Z> points). I've included default data sets of the planets in both formats so you can get a sense of what to expect in usage.
+This is a 3D model of the Solar System that renders in the browser. This makes it easy to implement in other projects, such as games or front ends for scientific models. This system can render either Keparian Orbital Elements or Cartesian State Vectors (<X,Y,Z> points). I've included default data sets of the planets in both formats so you can get a sense of what to expect in usage.
 
 ## Adjustments made for computer graphics
 
 One of the issues that can arise in modeling the Solar system is the conversion from the Ecliptic Coordinate System (ECS) to the computer's graphical coordinate system (CGCC). (Read below for more on the ECS)
 
-In the CGCC the Y and Z axes are in the wrong places and directions as compared to the ECS. You will need to convert between the coordinate systems for you to get a good result and accurate. However, you don't need to do any linear algebra. There is an easy to implement solution. By rotating _around_ the X-Axis teh CGCC will match the ECS. Here is how you do that.
+In the CGCC the Y and Z axes are in the wrong places and directions as compared to the ECS. You will need to convert between the coordinate systems for you to get an accurate result. However, you don't need to do any linear algebra to accomplish the proper rotations. There is an easy to implement solution. By rotating _around_ the X-Axis the CGCC will match the ECS. Here is how you do that.
 
 Before you add an item to the `scene` create a parent graphical object and rotate it by -90˚. Then attach your desired elements to this parent element. Now you should be able to treat ECS coordinates as they should be with no further transtlations needed. 
 
 Example (you will see me do this in the code) :
 ```javascript
 
-var particleSystem = new THREE.Points(particles, particleMat);
+//the child object
+var particleSystem = new THREE.Points(particles, particleMaterial); 
+
+//the parent object
 var center = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({color: 0xffff00}));
+
+//the rotation around the X-Axis
 center.rotation.x = -(90/180*Math.PI);
+
+//add the child to the parent
 center.add(particleSystem);
+
+//add the parent to the scene
 this.scene.add(center);
 
 ```
+![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/graphics_rotation.jpg)
 
 There is a "debug" flag in the `SolSys` file. By setting it to `true` you will activate an axis helper and unit circle which will help with orientation in the ECS reference frame. Red = X-Axis, Green = Y-Axis, Blue = Z-Axis
-
-![alt tag] (https://raw.githubusercontent.com/jasondcater/sol-sys-2/master/img/graphics_rotation.jpg)
 
 ## Definitions of Keparian Orbital Elements
 
